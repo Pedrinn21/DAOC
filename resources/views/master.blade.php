@@ -22,6 +22,11 @@
             <a href="/login">Log in</a>
             <a href="/register">Log on</a>
             @endguest
+
+            <form>
+                    <input type="search">
+                    <button type="submit">Pesquisar</button>
+                </form>
         </div>
 
     </body>
