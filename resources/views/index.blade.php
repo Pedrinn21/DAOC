@@ -12,7 +12,7 @@
             @yield('content')
 
             @auth
-            <a href="/dashboard">Lista</a>
+            <a href="/homelist">Lista</a>
             <form action="/logout" method="POST">
                 @csrf
                 <a href="/logout" onclick="event.preventDefault(); this.closest('form').submit();">Sair</a>
@@ -23,10 +23,12 @@
             <a href="/register">Log on</a>
             @endguest
 
+        </div>
+        <div>
             <form>
-                    <input type="search">
-                    <button type="submit">Pesquisar</button>
-                </form>
+                <input type="search">
+                <button type="submit">Pesquisar</button>
+            </form>
         </div>
 
     </body>

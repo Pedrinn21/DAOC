@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ListController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,10 +14,15 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+/*
 Route::get('/', function () {
-    return view('master');
+    return view('teste');
 });
+*/
+
+Route::get(uri:'/', action: [HomeController::class, 'index'])->name('home');
+
+Route::get(uri:'/homelist', action: [ListController::class, 'homelist'])->name('homelist');
 
 Route::middleware([
     'auth:sanctum',
@@ -23,6 +30,6 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('master');
-    })->name('dashboard');
+        return view('index');
+    })->name('/');
 });
