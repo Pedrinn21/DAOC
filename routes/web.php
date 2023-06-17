@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ListController;
+use App\Http\Controllers\LixoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,9 +21,12 @@ Route::get('/', function () {
 });
 */
 
-Route::get(uri:'/', action: [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get(uri:'/homelist', action: [ListController::class, 'homelist'])->name('homelist');
+Route::get('/homelist', [ListController::class, 'homelist'])->name('homelist');
+
+
+Route::get('/search', [LixoController::class, 'search'])->name('searchlixo');
 
 Route::middleware([
     'auth:sanctum',
@@ -30,6 +34,6 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('index');
+        return view('home/index');
     })->name('/');
 });

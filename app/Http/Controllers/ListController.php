@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class ListController extends Controller
 {
     public function homelist(){
-        return view(view:'homelist');
+        return view(view:'list/homelist');
     }
 }
