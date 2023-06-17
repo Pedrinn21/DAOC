@@ -38,7 +38,7 @@ class ListController extends Controller
     public function view($user){
 
         //$lista = $this->lista->all();
-        $lista = $this->lista->where('user_id', $user)->join('tblixo', 'list.lixo_id', '=' ,'tblixo.id')->select('tblixo.nome')->get();
+        $lista = $this->lista->where('user_id', $user)->join('tblixo', 'list.lixo_id', '=' ,'tblixo.id')->select('tblixo.nome', 'tblixo.tipolixo', 'tblixo.infolixo', 'tblixo.carac', 'tblixo.descarte')->get();
         //var_dump($lista);
         return view('list/viewlist',['lista' => $lista]);
     }
@@ -46,6 +46,10 @@ class ListController extends Controller
 
 
 /*
+
+infolixo',
+        'carac',
+        'descarte
 $users = DB::table('users')
             ->join('contacts', 'users.id', '=', 'contacts.user_id')
             ->join('orders', 'users.id', '=', 'orders.user_id')
