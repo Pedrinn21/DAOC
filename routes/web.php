@@ -5,26 +5,12 @@ use App\Http\Controllers\ListController;
 use App\Http\Controllers\LixoController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-/*
-Route::get('/', function () {
-    return view('teste');
-});
-*/
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/homelist', [ListController::class, 'homelist'])->name('homelist');
-
+Route::get('/createlist/{user}/{lixo}', [ListController::class, 'create'])->name('create.list');
+Route::get('/viewlist/{user}', [ListController::class, 'view'])->name('view.list');
 
 Route::get('/search', [LixoController::class, 'search'])->name('searchlixo');
 
