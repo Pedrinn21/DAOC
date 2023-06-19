@@ -26,7 +26,7 @@
             <br>
             <br>
             <div>
-                
+                 <a type="button" href="{{ route ('delete.list', ['list' => $list->list_id])}}">Desfavoritar</a>
 
             </div>
 
