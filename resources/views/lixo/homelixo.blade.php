@@ -13,7 +13,7 @@
 @extends('home/master')
 
 @section('master')
-<nav>
+<nav class="nav">
     <div class="sidebar">
         <svg width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <rect width="53" height="53" fill="url(#pattern0)"/>
