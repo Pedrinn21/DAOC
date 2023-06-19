@@ -2,39 +2,48 @@
 
 @section('master')
 
-@if($lista)
+<body>
+    @if($lista)
+        <div class="container">
+        @foreach($lista as $list)
+            <div class="card">
+            <h2> {{$list->nome}}</h2>
+               <br>
+        
+            <h1>{{$list->nome}}</h1>
+        
+            <h3>{{$list->carac}}</h3>
+            <br>
+
+            <p class="card-content">
+                <h4> Informação do Lixo </h5>
+            {{Str::limit($list->infolixo, 200, '...') }}
+            <h2>Características</h2>
+            {{$list->carac}}
+
+            <br>
+            <br>
+            <h4> Precauções ao descartar</h4>
+            {{Str::limit($list->descarte, 200, '...') }}
+                </p>
+                <h5 class="align-right"><a href="http://127.0.0.1:8000/search?search={{ urlencode($list->nome) }}" >mais informações </a></h5>
+            </div>
+            <br>
+            <br>
+            <div>
+                <a type="button" href="{{ route ('delete.list', ['list' => $list->list_id])}}">Desfavoritar</a>
+
+            </div>
+
+        @endforeach
+
     
-    @foreach($lista as $list)
-        <h2>ID = {{$list->list_id}}</h2>
-        
-        <h1>{{$list->nome}}</h1>
-        
-        <h2>Tipo Lixo</h2>
-        {{$list->tipolixo}}
 
-        <h2>Informações do Lixo</h2>
-        {{$list->infolixo}}
-
-        <h2>Características</h2>
-        {{$list->carac}}
-
-        <h2>Descarte</h2>
-        {{$list->descarte}}
-        <br>
-        <br>
         <div>
-            <a type="button" href="{{ route ('delete.list', ['list' => $list->list_id])}}">Desfavoritar</a>
-
+            <a type="button" href="{{route('home')}}">Voltar</a>
         </div>
 
-    @endforeach
-
-    
-
-    <div>
-        <a type="button" href="{{route('home')}}">Voltar</a>
-    </div>
-
     
     
-@endif
+    @endif
+</body>
