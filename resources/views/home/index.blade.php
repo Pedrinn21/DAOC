@@ -2,7 +2,7 @@
 
 @section('master')
     @auth
-        <nav>
+        <nav class="nav">
             <div class="sidebar">
                 <svg width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <rect width="53" height="53" fill="url(#pattern0)"/>
@@ -59,8 +59,10 @@
     @endauth
 
     @guest
-        <a href="/login">Log in</a>
-        <a href="/register">Log on</a>
+    <div class="top-right-links">
+    <a href="/login" class="button">Login</a>
+    <a href="/register" class="button">Registrar</a>
+</div>
     @endguest
 
 </div>
