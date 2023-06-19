@@ -8,9 +8,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/homelist', [ListController::class, 'homelist'])->name('homelist');
 Route::get('/createlist/{user}/{lixo}', [ListController::class, 'create'])->name('create.list');
 Route::get('/viewlist/{user}', [ListController::class, 'view'])->name('view.list');
+Route::get('/deletelist/{list}', [ListController::class, 'delete'])->name('delete.list');
 
 Route::get('/search', [LixoController::class, 'search'])->name('searchlixo');
 
