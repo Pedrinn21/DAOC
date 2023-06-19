@@ -46,12 +46,15 @@
 .align-right {
     text-align: right;
 }
+.left-aligned-link {
+    float: left;
+}
 
 .card {
-  flex-basis: calc(30% - 10px);
-  margin-left: 5px;
-  margin-right: 10px;
-  margin-top: 5px;
+  flex-basis: calc(25% - 10px);
+  margin-left: 100px;
+  margin-right: 0px;
+  margin-top: 15px;
   padding: 2.4rem;
   text-align: left;
   background: #ffffff;
@@ -59,3 +62,27 @@
   border-radius: 0.6rem;
 }
 
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar {
+    width: 95x;
+    background-color: #0DDD47;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    
+}
+
+.sidebar a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #333;
+    align-items: left;
+}
