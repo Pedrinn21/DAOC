@@ -18,7 +18,7 @@ class LixoController extends Controller
     public function search(){
 
         $search = request('search');
-        var_dump($search);
+        //var_dump($search);
 
         if($search != null){
             
@@ -26,9 +26,9 @@ class LixoController extends Controller
             $lixo = $this->lixo->where('nome','like', '%'.$search.'%')->first();
             //var_dump($lixo);
             //var_dump($search);
-            //return view('lixo/homelixo',['lixo' => $lixo]);
+            return view('lixo/homelixo',['lixo' => $lixo]);
         }else{
-            //return redirect()->back()->with('message', 'Nenhuma informação encontrada');
+            return redirect()->back()->with('message', 'Nenhuma informação encontrada');
         }
     }
 

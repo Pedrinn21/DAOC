@@ -66,24 +66,11 @@
 <br>
 <br>
 
-
 <h1 class="align-center"> Pesquise por um Lixo </h1>
 <div class="form-container">
     <form action="/search" method="get">
-        
+        <input type="text" id="search" name="search" class="form-control" placeholder="Procure um lixo">
 
-            @if($lixos)
-                <input type="hidden" id="search">
-                <select class="" id="options">
-                    
-                    <option id="search" name="search" ></option>
-                    @foreach($lixos as $lixo)
-
-                        <option id="search" name="search" value="{{$lixo->nome}}">{{$lixo->nome}}</option>
-                
-                    @endforeach
-                </select>
-            @endif
         <button type="submit">Pesquisar</button>
     </form>
 

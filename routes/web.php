@@ -14,7 +14,7 @@ Route::get('/deletelist/{list}', [ListController::class, 'delete'])->name('delet
 
 
 Route::get('/search', [LixoController::class, 'search'])->name('searchlixo');
-Route::get('/', [LixoController::class, 'view'])->name('home');
+//Route::get('/', [LixoController::class, 'view'])->name('home');
 
 
 Route::middleware([
@@ -24,5 +24,5 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('home/index');
-    })->name('/');
+    })->name('dashboard');
 });

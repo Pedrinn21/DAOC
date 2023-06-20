@@ -48,11 +48,13 @@
 
     </a>
     @auth
-    <a href="/logout" onclick="event.preventDefault(); this.closest('form').submit();"> &nbsp;&nbsp;&nbsp;       
-        <svg width="33" height="38" viewBox="0 0 33 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <form action="/logout" method="POST">
+                    @csrf
+                    <a href="/logout" onclick="event.preventDefault(); this.closest('form').submit();"> &nbsp;&nbsp;&nbsp;       
+            <svg width="33" height="38" viewBox="0 0 33 38" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M23.0833 1H1V31.9167C1 33.088 1.46533 34.2114 2.29361 35.0397C3.1219 35.868 4.24529 36.3333 5.41667 36.3333H23.0833M25.2917 25.2917L31.9167 18.6667M31.9167 18.6667L25.2917 12.0417M31.9167 18.6667H9.83333" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </a>
+            </svg></a>
+                </form>
     @endauth
     </div>
 </nav>
