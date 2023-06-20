@@ -23,21 +23,27 @@ class ListController extends Controller
 
     public function create($user, $lixo){
 
-        //var_dump($user);
-        //var_dump($lixo);
+        var_dump($user);
+        var_dump($lixo);
 
         $lista = $this->lista->where('user_id', $user)->where('lixo_id', $lixo)->get();
 
-        if($lista == null){
+        $teste = count($lista);
+        var_dump($teste);
+
+        if($teste == 0){
+            var_dump($lista);
             $created = $this->lista->create(['user_id' => $user, 'lixo_id' => $lixo]);
 
             if($created){
                 return redirect()->back()->with('message', 'Successfully created');
             }
 
-            return redirect()->back()->with('message', 'Error created');
+            //return redirect()->back()->with('message', 'Error created');
+        }else{
+            return redirect()->back()->with('message', 'Lixo ja favoritado');
         }
-        return redirect()->back()->with('message', 'Lixo ja favoritado');
+        
 
     }
 
@@ -58,17 +64,5 @@ class ListController extends Controller
         return redirect()->back()->with('message', 'Error deleted');
     }
 
+
 }
-
-
-/*
-
-infolixo',
-        'carac',
-        'descarte
-$users = DB::table('users')
-            ->join('contacts', 'users.id', '=', 'contacts.user_id')
-            ->join('orders', 'users.id', '=', 'orders.user_id')
-            ->select('users.*', 'contacts.phone', 'orders.price')
-            ->get();
-*/

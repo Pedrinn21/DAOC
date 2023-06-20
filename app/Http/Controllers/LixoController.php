@@ -18,18 +18,25 @@ class LixoController extends Controller
     public function search(){
 
         $search = request('search');
+        var_dump($search);
 
-        if($search){
+        if($search != null){
             
 
-            $lixo = $this->lixo->where('nome', $search)->first();
+            $lixo = $this->lixo->where('nome','like', '%'.$search.'%')->first();
             //var_dump($lixo);
             //var_dump($search);
+            //return view('lixo/homelixo',['lixo' => $lixo]);
         }else{
-            $lixo = $this->lixo->all();
+            //return redirect()->back()->with('message', 'Nenhuma informação encontrada');
         }
-
-        return view('lixo/homelixo',['lixo' => $lixo]);
-
     }
+
+    public function view(){
+        $lixos = $this->lixo->get();
+
+        return view('home/index',['lixos' => $lixos]); 
+    }
+
+
 }

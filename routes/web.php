@@ -12,7 +12,10 @@ Route::get('/createlist/{user}/{lixo}', [ListController::class, 'create'])->name
 Route::get('/viewlist/{user}', [ListController::class, 'view'])->name('view.list');
 Route::get('/deletelist/{list}', [ListController::class, 'delete'])->name('delete.list');
 
+
 Route::get('/search', [LixoController::class, 'search'])->name('searchlixo');
+Route::get('/', [LixoController::class, 'view'])->name('home');
+
 
 Route::middleware([
     'auth:sanctum',
